@@ -45,5 +45,31 @@ Auxiliary Space: O(1)
 		}
 		return maxSoFar;
 	}
+	
+	/*
+	 * https://leetcode.com/problems/maximum-product-subarray/discuss/
+	 * O(n)
+	 */
+	public static int getMaxProduct(int[] arr){
+		int result = arr[0];
+		for(int i = 1, imax = result, imin = result; i < arr.length; i++){
+			 // multiplied by a negative makes big number smaller, small number bigger so we redefine the extremums by swapping them
+			if(arr[i] < 0)
+				swap(imax, imin);
+			
+			// max/min product for the current number is either the current number itself or the max/min by the previous number times the current one
+			imax = Math.max(imax, arr[i] * imax);
+			imin = Math.min(imin, arr[i] * imin);
+			
+			result = Math.max(result, imax);
+		}
+		return result;
+	}
+	
+	public static void swap(int imax, int imin){
+		int temp = imax;
+		imax = imin;
+		imin = temp;
+	}
 
 }

@@ -8,9 +8,9 @@ Keep in mind: ALL RIGHT NODES IN ORIGINAL TREE ARE LEAF NODE.
 
 /* for example, turn these:
  *
- *        1                 1
+ *        1                   1
  *       / \                 / \
- *      2   3            2   3
+ *      2   3               2   3
  *     / \
  *    4   5
  *   / \
@@ -20,7 +20,7 @@ Keep in mind: ALL RIGHT NODES IN ORIGINAL TREE ARE LEAF NODE.
  *
  *        1               1
  *       /               /
- *      2---3         2---3
+ *      2---3          2---3
  *     /
  *    4---5
  *   /
@@ -29,13 +29,13 @@ Keep in mind: ALL RIGHT NODES IN ORIGINAL TREE ARE LEAF NODE.
  * where 6 is the new root node for the left tree, and 2 for the right tree.
  * oriented correctly:
  *
- *     6                   2
+ *     6                     2
  *    / \                   / \
- *   7   4              3   1
- *        / \
- *       5   2
- *            / \
- *          3   1
+ *   7   4                 3   1
+ *       / \
+ *      5   2
+ *         / \
+ *        3   1
  *          
  *          
  *1. Recursively traverse to the leftmost node. 
@@ -62,4 +62,31 @@ public class FlipUpsideDownWithRightLeaf {
 		root.left = root.right = null;
 		return newRoot;
 	}
+	
+	/*
+	 * http://buttercola.blogspot.com/2015/10/leetcode-binary-tree-upside-down.html
+	 * iterative
+	 */
+	public TreeNode upsideDownBinaryTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+         
+        TreeNode parent = null;
+        TreeNode parentRightChild = null;
+        TreeNode p = root;
+         
+        while (p != null) {
+            TreeNode next = p.left;
+            p.left = parentRightChild;
+            parentRightChild = p.right;
+             
+            p.right = parent;
+             
+            parent = p;
+            p = next;
+        }
+         
+        return parent;
+    }
 }

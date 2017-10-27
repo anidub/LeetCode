@@ -30,5 +30,46 @@ public class findPeakElement {
 		else
 			return findPeakIndexUtil(arr, mid+1, high);
 	}
+	
+	
+	
+	//http://www.geeksforgeeks.org/find-peak-element-2d-array/
+	//Time Complexity : O(rows * log(columns)).
+	//Auxiliary Space : O(columns/2) 
+	public static int findMax2D(int[][] arr){
+		int rows = arr.length;
+		int columns = arr[0].length;
+		
+		return findMax2DUtil(arr, rows, columns, columns/2);
+	}
+	
+	public static int findMax2DUtil(int[][] arr, int rows, int columns, int mid){
+		int max = 0;
+		int maxIndex = findMax(arr, rows, mid, max);
+		
+		if(mid == 0 || mid == columns-1)
+			return max;
+		
+		if(max >= arr[maxIndex][mid-1] && max >= arr[maxIndex][mid+1]){
+			return max;
+		}
+		
+		if(max <= arr[maxIndex][mid-1]){
+			return findMax2DUtil(arr, rows, columns, mid - mid/2);
+		}
+		return findMax2DUtil(arr, rows, columns, mid + mid/2);
+	}
+	
+	public static int findMax(int[][] arr, int rows, int mid, int max){
+		int maxIndex = 0;
+		
+		for(int i = 0; i < rows; i++){
+			if(max < arr[i][mid]){
+				max = arr[i][mid];
+				maxIndex = i;
+			}
+		}
+		return maxIndex;
+	}
 
 }
