@@ -11,17 +11,16 @@ Your function should return length = 5, with the first five elements of nums bei
 public class maximizeKOccurences {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int[] nums = {1,1,1,2,2,3};
+		removeDuplicates(nums);
 
 	}
-	  public int removeDuplicates(int[] nums) {
+	  public static int removeDuplicates(int[] nums) {
 	        return removeDuplicates(nums, 2);
 	    }
 	    
-	    public int removeDuplicates(int[] nums, int k) {
-	        
+	    public static  int removeDuplicates(int[] nums, int k) {	        
 	        int len = nums.length, count = 1;
-	        
 	        // j points the position where the next qualified number 
 	        // found by i pointer will be written
 	        for ( int i = 1, j = 1; i < nums.length; i++ ) {

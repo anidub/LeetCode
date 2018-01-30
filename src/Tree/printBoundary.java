@@ -61,9 +61,11 @@ public class printBoundary {
 		}
 	}
 	
+	// A simple function to print leaf nodes of a binary tree
 	public static void printLeaves(TreeNode root){
 		if(root != null){
 			printLeaves(root.left);
+			 // Print it if it is a leaf node
 			if(root.left == null && root.right == null){
 				System.out.println(root.data);
 			}

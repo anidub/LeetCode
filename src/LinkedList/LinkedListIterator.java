@@ -115,7 +115,6 @@ public class LinkedListIterator {
 				buf.append(current + "  ");
 				current = current.next;
 			}
-
 			return buf.toString();
 		}
 

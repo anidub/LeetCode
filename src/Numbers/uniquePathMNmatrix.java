@@ -6,7 +6,7 @@ The robot is trying to reach the bottom-right corner of the grid (marked 'Finish
 How many possible unique paths are there?
  */
 public class uniquePathMNmatrix {
-
+		//total unique paths
 	  public int uniquePaths(int m, int n) {
 	        Integer[][] map = new Integer[m][n];
 	        for(int i = 0; i<m;i++){

@@ -65,7 +65,7 @@ Time complexity : O(MN)
 	    }
 	}
 	
-	private void markDFS(char[][] board, int x, int y) {
+	private void markDFS(char[][] board, int x, int y) {		
 		if (board[x][y] != 'O') {
 			return;
 		}
@@ -81,5 +81,27 @@ Time complexity : O(MN)
 			markDFS(board, x, y + 1);
 		if (y - 1 > 0)
 			markDFS(board, x, y - 1);
+	} 
+	
+	//can use this..should work
+	private void markDFSSafe(char[][] board, int x, int y) {
+		int rows = board.length, columns = board[0].length;
+		if(x < 0 || x > rows-1 || y < 0 || y > columns-1)
+			return;
+		
+		if (board[x][y] != 'O') {
+			return;
+		}
+		// mark the current node
+		board[x][y] = '#';
+		// mark its neighbors if needed
+		
+		markDFS(board, x + 1, y);
+	
+		markDFS(board, x - 1, y);
+	
+		markDFS(board, x, y + 1);
+
+		markDFS(board, x, y - 1);
 	} 
 }

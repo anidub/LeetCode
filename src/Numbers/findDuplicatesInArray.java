@@ -30,5 +30,4 @@ public class findDuplicatesInArray {
 				System.out.println("index :" + i);
 		}
 	}
-
 }

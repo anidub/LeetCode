@@ -30,7 +30,7 @@ public class minDistanceBetweenWords {
 				destIndex = i;
 			}
 			if(sourceIndex != -1 && destIndex != -1){
-				minDist = minDist > Math.abs(destIndex - sourceIndex) ? destIndex - sourceIndex : minDist;
+				minDist = Math.min(minDist, Math.abs(destIndex - sourceIndex));
 			}
 			i++;
 		}

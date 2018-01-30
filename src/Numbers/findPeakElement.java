@@ -29,9 +29,7 @@ public class findPeakElement {
 			return findPeakIndexUtil(arr, low, mid-1);
 		else
 			return findPeakIndexUtil(arr, mid+1, high);
-	}
-	
-	
+	}	
 	
 	//http://www.geeksforgeeks.org/find-peak-element-2d-array/
 	//Time Complexity : O(rows * log(columns)).
@@ -50,16 +48,22 @@ public class findPeakElement {
 		if(mid == 0 || mid == columns-1)
 			return max;
 		
+		//top and down and already checked. check for right and left
 		if(max >= arr[maxIndex][mid-1] && max >= arr[maxIndex][mid+1]){
 			return max;
 		}
 		
+		//left check
 		if(max <= arr[maxIndex][mid-1]){
 			return findMax2DUtil(arr, rows, columns, mid - mid/2);
 		}
+		//right check
 		return findMax2DUtil(arr, rows, columns, mid + mid/2);
 	}
 	
+	/*
+	 * find max element in middle column
+	 */
 	public static int findMax(int[][] arr, int rows, int mid, int max){
 		int maxIndex = 0;
 		

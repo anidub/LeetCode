@@ -46,6 +46,11 @@ public class MaximumMinimumProductSubsets {
 		int max = arr[0]; int min = arr[0];
 		
 		for(int i = 1; i < arr.length; i++){
+			 /* Current maximum product is maximum of following
+            1) prevMax * curElement (when curElement is +ve)
+            2) prevMin * curElement (when curElement is -ve)
+            3) Element itself
+            4) Previous max product */
 			curMax = Math.max(prevMax * arr[i], Math.max(prevMin * arr[i], arr[i]));
 			curMax = Math.max(prevMax, curMax);
 			
