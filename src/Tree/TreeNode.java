@@ -5,6 +5,12 @@ class TreeNode {
 	TreeNode left;
 	TreeNode right;
 	
+	public TreeNode(int data){
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+	
 	public int getData() {
 		return data;
 	}
