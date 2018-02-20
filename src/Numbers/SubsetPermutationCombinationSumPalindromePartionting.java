@@ -118,7 +118,7 @@ For example,
   [1,1,2],
   [1,2,1],
   [2,1,1]
-]
+]USE THIS
 	 */
 	public static List<List<Integer>> PermutationsNonDistict(int[] arr){
 		List<List<Integer>> res = new ArrayList<>();

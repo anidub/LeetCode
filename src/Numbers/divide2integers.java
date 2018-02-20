@@ -49,4 +49,27 @@ If it is overflow, return MAX_INT.
 		
 		return multiple + lDivide(ldividend - sum, ldivisor);
 	}
+	
+	//other method
+	// if you want remainder also
+	public static long lDivides(long ldividend, long ldivisor){
+		if(ldividend < ldivisor) return 0;
+		
+		long sum = 0;
+		long multiple = 0;
+
+		while(sum < ldividend){
+			sum += ldivisor;
+			multiple++;
+		}
+		long  remainder = 0;
+		if(sum  == ldividend){
+			remainder = 0;
+		}else if (sum > ldividend){
+			multiple--;
+			remainder = sum - ldividend;
+		}
+		System.out.println("remainder : " + remainder);
+		return multiple;
+	}
 }

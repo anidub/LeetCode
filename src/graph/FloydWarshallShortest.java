@@ -2,6 +2,8 @@ package graph;
 /*
  *  find shortest distances between every pair of vertices in a given edge weighted directed Graph.
  *  Floyd-Warshall Algorithm for finding all pair shortest path.
+ *  Floyd-Warshall algorithm is a procedure, which is used to find the shorthest (longest) paths among 
+ *  all pairs of nodes in a graph, which does not contain any cycles of negative lenght. 
  *   * Time complexity - O(V^3)
  * Space complexity - O(V^2)
  * 

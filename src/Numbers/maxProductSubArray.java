@@ -14,15 +14,45 @@ Time Complexity: O(n)
 Auxiliary Space: O(1)
  */
 	public static void main(String[] args) {
-		int arr[] = {-1, -2, -3, 4};
-        System.out.println("Maximum Sub array product is "+ getMaxProductSubArray(arr));
+		//int arr[] = {-1, -2, -3, 4};
+		int arr[] = {6, -3, -10, 0, 2};
+        System.out.println("Maximum Sub array product is "+ getMax(arr));
+	}
+	
+	//USE this!!!!
+	// try and under max min product subsets in this package
+	public static int getMax(int[] arrr){
+		if(arrr.length == 0) return 0;
+		int[] arr = {6,3,0,10,0,2}; 
+		int result = arr[0]; int max = arr[0]; int min = arr[0];
+		
+		for(int i = 1; i < arr.length; i++){
+			int temp = max;
+			
+			max = Math.max(Math.max(max * arr[i], min * arr[i]), arr[i]);
+			min = Math.min(Math.min(temp * arr[i], min * arr[i]), arr[i]);
+			
+			if(result < max){
+				result = max;
+			}
+		}
+		// if only positive numbers
+		for(int i = 1; i < arr.length; i++){			
+			max = Math.max(max * arr[i],  arr[i]);
+			
+			if(result < max){
+				result = max;
+			}
+		}
+		
+		return result;
 	}
 	/*
 	 *  assumes that the given input array always has a positive output.
 	 *  It doesn’t work for arrays like {0, 0, -20, 0}, {0, 0, 0}.. etc. The solution can be easily modified to handle this case.
 	 */
 	public static int getMaxProductSubArray(int[] arr){
-		int maxSoFar = 1;
+		int result = 1;
 		int maxCurrent = 1;
 		int minCurrent = 1;
 		
@@ -39,11 +69,11 @@ Auxiliary Space: O(1)
 				minCurrent = temp * arr[i];
 			}
 			
-			if(maxCurrent > maxSoFar){
-				maxSoFar = maxCurrent;
+			if(result < maxCurrent){
+				result = maxCurrent;
 			}
 		}
-		return maxSoFar;
+		return result;
 	}
 	
 	/*
