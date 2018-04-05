@@ -56,7 +56,7 @@ Note: m and n will be at most 100.
 	            }
 	        }
 	        
-	        for(int j = 0; j < n; j ++) {
+	        for(int j = 0; j < n; j++) {
 	            if(obstacleGrid[0][j] == 1) {
 	                dp[0][j] = 0;
 	                break;

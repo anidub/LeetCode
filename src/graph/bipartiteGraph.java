@@ -76,17 +76,19 @@ public class bipartiteGraph {
 		queue.add(source);
 		while(!queue.isEmpty()){
 			int u = queue.poll();
+			   // Return false if there is a self-loop 
 			if(graph[u][u] == 1) return false;
 			
 			for(int v = 0; v < V; v++){
+				// Assign alternate color to this adjacent v of u 
 				if(graph[u][v] == 1 && colorArr[v] == -1){
 					colorArr[v] = 1 - colorArr[u];
 					queue.push(v);
+				       //  An edge from u to v exists and destination v is colored with same color as u
 				}else if(graph[u][v] == 1 && colorArr[v] == colorArr[u])
 					return false;
 			}			
 		}
 		return true;
 	}
-
 }
