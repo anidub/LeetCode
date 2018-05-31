@@ -35,7 +35,7 @@ http://www.geeksforgeeks.org/find-two-rectangles-overlap/
 			return false;
 		
 		//left case
-		if(r2.x < l1.x && l2.x > r1.x)
+		if(r2.x < l1.x || l2.x > r1.x)
 			return false;
 		
 		return true;

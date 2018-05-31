@@ -44,7 +44,8 @@ public class isoMorphicStrings {
 		}
 		return true;
 	}
-	
+
+	//use THIS
 	public boolean isIsomorphic(String s, String t) {
 	    if(s==null || t==null)
 	        return false;

@@ -21,7 +21,7 @@ Each rectangle is defined by its bottom left corner and top right corner as show
 		int rectTwo = (G-E) * (H-F);
 	
 		if(A >= G || B >= H || C <= E || D <= F){
-			return rectOne * rectTwo;
+			return rectOne + rectTwo;
 		}
 		
 		int length = Math.min(C, G) - Math.max(A, E);

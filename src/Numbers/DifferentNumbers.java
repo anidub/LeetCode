@@ -24,7 +24,7 @@ public class DifferentNumbers {
 			Integer floor = set.floor(nums[i] + t);
 			Integer ceil = set.ceiling(nums[i] - t);
 			
-			if((floor != null && floor >= nums[i]) || (ceil != null && ceil <= nums[i])){
+			if((floor != null && floor >= nums[i]) || (ceil != null && ceil <= nums[i])){//number is less than floor and greater than ceil
 				return true;
 			}
 			set.add(nums[i]);

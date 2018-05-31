@@ -72,5 +72,4 @@ public class printBoundary {
 			printLeaves(root.right);
 		}			
 	}
-
 }

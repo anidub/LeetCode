@@ -88,7 +88,6 @@ public class LinkedListIterator {
 			if (nestedNodes == null) {
 				nestedNodes = newNode;
 			} else {
-
 				Node cursor = nestedNodes;
 				while (cursor.next != null) {
 					cursor = cursor.next;
