@@ -1,6 +1,8 @@
 package graph;
 /*
  * http://www.geeksforgeeks.org/backtracking-set-1-the-knights-tour-problem/
+ * A knight's tour is a sequence of moves of a knight on a chessboard such that the knight visits every square only once.
+ *  If the knight ends on a square that is one knight's move from the beginning square (so that it could tour the board again immediately, following the same path), the tour is closed, otherwise it is open.
  * Problems which are typically solved using backtracking technique have following property in common. 
  * These problems can only be solved by trying every possible configuration and each configuration is tried only once.
  *  A Naive solution for these problems is to try all configurations and output a configuration that follows given problem constraints. 

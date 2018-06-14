@@ -4,6 +4,8 @@ package Numbers;
 The robot can only move either down or right at any point in time. 
 The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
 How many possible unique paths are there?
+ Time complexity : O(n*m)
+ USE THIS
  */
 public class uniquePathMNmatrix {
 		//total unique paths
@@ -22,6 +24,31 @@ public class uniquePathMNmatrix {
 	        }
 	        return map[m-1][n-1];
 	    }
+	  
+	  /**
+	 * Count all paths in matrix from source to destination
+	 */
+	static int findWays4directions( int[][] a, int i, int j, boolean[][] visited ) {
+		    if ( i < 0 || j < 0 || i == a.length || j == a[0].length )
+		        return 0;
+
+		    if ( i == a.length - 1 && j == a[0].length - 1 )
+		        return 1;
+
+		    if ( visited[i][j] == true )
+		        return 0;
+
+		    visited[i][j] = true;
+
+		    int right = findWays4directions( a, i, j + 1, visited );
+		    int down = findWays4directions( a, i + 1, j, visited );
+		    int left = findWays4directions( a, i, j - 1, visited );
+		    int up = findWays4directions( a, i - 1, j, visited );
+
+		    visited[i][j] = false;
+
+		    return left + down + right + up;
+		}
 	  
 	  //obstacles
 	  /*

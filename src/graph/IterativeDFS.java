@@ -5,6 +5,8 @@ import java.util.Stack;
 /*
  * http://www.geeksforgeeks.org/iterative-depth-first-traversal/
  *  time complexity : O(V + E).
+ *  
+ *  //Compare Matrix representation vs list representation
  */
 public class IterativeDFS {
 	
@@ -13,9 +15,9 @@ public class IterativeDFS {
 	}
 	
 	public static void iterativedfs(Graph graph){
-		int size = graph.V;
+		int size = graph.V;//total vertices
 		boolean[] visited = new boolean[size];
-		for(int i = 0; i < graph.V; i++){
+		for(int i = 0; i < size; i++){
 			if(!visited[i])
 				dfs(graph, i, visited);
 		}

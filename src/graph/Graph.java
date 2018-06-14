@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Graph {
-	int V;
+	int V;// total vertices
 	List<Integer> adj[];
 	
 	public Graph(int v){
